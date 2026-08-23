@@ -20,6 +20,35 @@ window.addEventListener('scroll', () => {
   header.style.boxShadow = window.scrollY > 10 ? '0 4px 12px rgba(0,0,0,0.3)' : 'none';
 });
 
+// Galleria hero: scorrimento automatico + frecce manuali
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroDots = document.querySelectorAll('.hero-dot');
+const heroPrev = document.getElementById('heroPrev');
+const heroNext = document.getElementById('heroNext');
+const HERO_INTERVAL = 5000;
+let heroIndex = 0;
+let heroTimer = null;
+
+function showHeroSlide(index) {
+  heroIndex = (index + heroSlides.length) % heroSlides.length;
+  heroSlides.forEach((slide, i) => slide.classList.toggle('active', i === heroIndex));
+  heroDots.forEach((dot, i) => dot.classList.toggle('active', i === heroIndex));
+}
+
+function startHeroAutoplay() {
+  clearInterval(heroTimer);
+  heroTimer = setInterval(() => showHeroSlide(heroIndex + 1), HERO_INTERVAL);
+}
+
+if (heroSlides.length) {
+  heroNext.addEventListener('click', () => { showHeroSlide(heroIndex + 1); startHeroAutoplay(); });
+  heroPrev.addEventListener('click', () => { showHeroSlide(heroIndex - 1); startHeroAutoplay(); });
+  heroDots.forEach(dot => {
+    dot.addEventListener('click', () => { showHeroSlide(Number(dot.dataset.slide)); startHeroAutoplay(); });
+  });
+  startHeroAutoplay();
+}
+
 // Animazioni allo scroll: gli elementi con classe "reveal" appaiono
 // con una piccola dissolvenza + slide quando entrano nel viewport.
 const revealObserver = new IntersectionObserver((entries) => {

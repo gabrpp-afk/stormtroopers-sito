@@ -8,12 +8,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="media/storm_trooper_logo_no_bg.png">
 </head>
 <body>
 
 <header class="site-header" id="header">
   <div class="container header-inner">
-    <a href="#top" class="logo">ASD <span>STORM TROOPERS</span></a>
+    <a href="#top" class="logo">
+      <img src="media/storm_trooper_logo_no_bg.png" alt="Logo ASD Storm Troopers" class="logo-img">
+      ASD <span>STORM TROOPERS</span>
+    </a>
     <nav class="nav" id="nav">
       <a href="#chi-siamo">Chi siamo</a>
       <a href="#cosa-facciamo">Cosa facciamo</a>
@@ -27,7 +31,16 @@
 </header>
 
 <section class="hero" id="top">
-  <div class="hero-camo"></div>
+  <div class="hero-gallery" id="heroGallery">
+    <div class="hero-slide active" style="background-image: url('media/landing_photo1.jpeg')"></div>
+    <div class="hero-slide" style="background-image: url('media/landing_photo2.jpeg')"></div>
+    <div class="hero-slide" style="background-image: url('media/landing_photo3.jpeg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <button class="hero-arrow hero-arrow-left" id="heroPrev" aria-label="Foto precedente">&#10094;</button>
+  <button class="hero-arrow hero-arrow-right" id="heroNext" aria-label="Foto successiva">&#10095;</button>
+
   <div class="container hero-inner">
     <p class="hero-eyebrow">Associazione Sportiva Dilettantistica</p>
     <h1>ASD STORM TROOPERS</h1>
@@ -36,6 +49,12 @@
       <a href="https://chat.whatsapp.com/Hc36Ss3kiFWIHpLNTXOJPR?mode=gi_t" class="btn btn-primary" target="_blank" rel="noopener">Unisciti al gruppo WhatsApp</a>
       <a href="#contatti" class="btn btn-outline">Scrivici</a>
     </div>
+  </div>
+
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0" aria-label="Vai alla foto 1"></button>
+    <button class="hero-dot" data-slide="1" aria-label="Vai alla foto 2"></button>
+    <button class="hero-dot" data-slide="2" aria-label="Vai alla foto 3"></button>
   </div>
 </section>
 
@@ -186,7 +205,10 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>&copy; <span id="year"></span> ASD Storm Troopers. Tutti i diritti riservati.</p>
+    <div class="footer-brand">
+      <img src="media/patch tan rettangolo.png" alt="Patch ASD Storm Troopers" class="footer-logo">
+      <p>&copy; <span id="year"></span> ASD Storm Troopers. Tutti i diritti riservati.</p>
+    </div>
     <div class="footer-social">
       <a href="https://www.instagram.com/stormtroopers.asd/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.tiktok.com/@stormtroopers.asd" target="_blank" rel="noopener">TikTok</a>
