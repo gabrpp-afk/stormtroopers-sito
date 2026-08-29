@@ -2,6 +2,9 @@
 
 Sito statico (HTML/CSS/JS, nessun backend necessario), già personalizzato con i dati dell'associazione.
 
+**Sito pubblicato:** https://gabrpp-afk.github.io/stormtroopers-sito/
+**Repo GitHub:** gabrpp-afk/stormtroopers-sito (branch `main`)
+
 ## File
 
 - `index.html` — struttura e contenuti
@@ -19,54 +22,44 @@ Già inseriti e funzionanti:
 - TikTok: `tiktok.com/@stormtroopers.asd`
 - Testi di "Chi siamo" e "Cosa facciamo"
 - Numeri: 15 soci attivi, 35 giocate all'anno, fondazione 2025
+- Logo (header + favicon) e patch (footer) caricati e funzionanti su GitHub Pages
+- Galleria hero (3 foto `landing_photo1/2/3.jpeg`) caricata e funzionante su GitHub Pages
+- **Form contatti (Formspree) configurato**: Form ID `xwlkpkko` inserito in `index.html`, form attivo e funzionante
 
-## Cosa manca prima della pubblicazione
+## Cosa manca prima della pubblicazione completa
 
-### 1. Form contatti (Formspree) — DA FARE
+### Video — DA FARE
 
-Il form invia i messaggi tramite [Formspree](https://formspree.io) (gratuito fino a 50 invii/mese), così non serve un server.
+I 3 riquadri video nella sezione "Media" puntano a `media/video1.mp4`, `video2.mp4`, `video3.mp4`, ma questi file non sono mai stati caricati su GitHub (danno errore 404 sul sito pubblicato).
 
-1. Registrarsi gratuitamente su formspree.io (si può usare `stormtroopers.asd@gmail.com`)
-2. Cliccare "+ New Form", impostare come destinatario `stormtroopers.asd@gmail.com`
-3. Formspree fornisce un endpoint tipo `https://formspree.io/f/xxxxaaaa` — la parte dopo `/f/` è il **Form ID**
-4. In `index.html` cercare `INSERISCI-IL-TUO-ID` e sostituirlo con il Form ID
-5. Confermare l'email di verifica che Formspree invia, altrimenti i messaggi non arrivano
+1. Caricare i 3 file video reali nella cartella `media/` del repo, con esattamente questi nomi: `video1.mp4`, `video2.mp4`, `video3.mp4`
+2. Sostituire i titoli placeholder `[Titolo evento 1]`, `[Titolo evento 2]`, `[Titolo evento 3]` in `index.html` con i titoli veri
 
-Finché non è configurato, il form non invia nulla: i contatti restano comunque raggiungibili via email diretta e WhatsApp, che sono già attivi.
+Finché non è fatto, i contatti restano comunque raggiungibili via email diretta, WhatsApp e ora anche via form (Formspree attivo).
 
-### 2. Video
+## Come pubblicarlo / aggiornarlo
 
-Inserire i file in `media/` con nomi `video1.mp4`, `video2.mp4`, `video3.mp4` (oppure cambiare i percorsi nella sezione "Media" di `index.html`). Vedere `media/README.txt` per i consigli su compressione e sull'alternativa YouTube per i video più pesanti.
+Il sito è già online su GitHub Pages: https://gabrpp-afk.github.io/stormtroopers-sito/
 
-Vanno anche sostituiti i titoli placeholder `[Titolo evento 1/2/3]` sotto ogni video.
+Per aggiornarlo: caricare i file nuovi/modificati su `github.com/gabrpp-afk/stormtroopers-sito` tramite **Add file → Upload files** (sovrascrivendo i file esistenti con lo stesso nome). Se si aggiungono file media, vanno trascinati dentro la cartella `media/` per mantenere i percorsi corretti.
 
-## Come pubblicarlo gratis
-
-Opzione più semplice: **GitHub Pages**.
-
-1. Creare un account su github.com (gratis)
-2. Creare un nuovo repository, es. `stormtroopers-sito`
-3. Caricare tutti i file di questa cartella nel repository (via web: "Add file" > "Upload files")
-4. Andare in Settings > Pages e selezionare il branch `main` come sorgente
-5. Dopo un paio di minuti il sito sarà online su `https://nomeaccount.github.io/stormtroopers-sito`
-
-Alternativa altrettanto semplice: **Netlify** (netlify.com) — si trascina la cartella sul loro sito e si ottiene un link online in pochi secondi, gratis.
+Nota: i nomi file sono case-sensitive su GitHub Pages — devono corrispondere esattamente a quelli referenziati nel codice.
 
 ## Dominio personalizzato (opzionale, a pagamento)
 
 Per un indirizzo tipo `www.asdstormtroopers.it`:
 
 - Registrare il dominio (Register.it, IONOS, Namecheap — indicativamente 10-15€/anno per un `.it`)
-- Sia GitHub Pages che Netlify permettono di collegare un dominio personalizzato gratuitamente dalle rispettive impostazioni
+- GitHub Pages permette di collegare un dominio personalizzato gratuitamente dalle impostazioni del repo (Settings > Pages)
 
 ## Costi complessivi
 
 | Voce | Costo |
 |---|---|
-| Sito e hosting (GitHub Pages o Netlify) | Gratuito |
+| Sito e hosting (GitHub Pages) | Gratuito |
 | Form contatti (Formspree, piano free) | Gratuito fino a 50 messaggi/mese |
 | Dominio personalizzato `.it` | Opzionale, ~10-15€/anno |
 
 ## Provare il sito
 
-Basta aprire `index.html` con un doppio click nel browser. Per testare il form di contatto serve però che il sito sia online (Formspree non funziona da file locale).
+Il sito è già online: https://gabrpp-afk.github.io/stormtroopers-sito/ — il form di contatto (Formspree) funziona direttamente da lì.
