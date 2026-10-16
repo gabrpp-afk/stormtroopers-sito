@@ -63,3 +63,7 @@ Per un indirizzo tipo `www.asdstormtroopers.it`:
 ## Provare il sito
 
 Il sito è già online: https://gabrpp-afk.github.io/stormtroopers-sito/ — il form di contatto (Formspree) funziona direttamente da lì.
+
+## Log verifiche
+
+- **16/09/2026** — verificato allineamento tra repo GitHub (branch `main`) e sito pubblicato su GitHub Pages: `index.html`, `style.css`, `script.js` coincidono, form Formspree confermato attivo e funzionante con ID `xwlkpkko`.
