@@ -9,8 +9,8 @@ Sito statico (HTML/CSS/JS, nessun backend necessario), già personalizzato con i
 
 - `index.html` — struttura e contenuti
 - `style.css` — tema multicam tan/marrone, font Oswald + Inter
-- `script.js` — menu mobile, animazioni allo scroll, anno footer
-- `media/` — cartella dove inserire i video
+- `script.js` — menu mobile, galleria hero, galleria foto con lightbox, animazioni allo scroll, anno footer
+- `media/` — foto, loghi e patch del sito
 
 ## Stato attuale
 
@@ -24,18 +24,20 @@ Già inseriti e funzionanti:
 - Numeri: 15 soci attivi, 35 giocate all'anno, fondazione 2025
 - Logo (header + favicon) e patch (footer) caricati e funzionanti su GitHub Pages
 - Galleria hero (3 foto `landing_photo1/2/3.jpeg`) caricata e funzionante su GitHub Pages
+- **Galleria foto** (sezione "Galleria"): 18 foto (`gallery_01…15.jpg` + le 3 della landing), griglia a colonne con ingrandimento a schermo intero (frecce, Esc, tastiera). Foto convertite in JPEG da 1800 px per il web. Al momento i video non sono presenti nel sito.
 - **Form contatti (Formspree) configurato**: Form ID `xwlkpkko` inserito in `index.html`, form attivo e funzionante
 
-## Cosa manca prima della pubblicazione completa
+## Come aggiungere foto alla galleria
 
-### Video — DA FARE
+1. Esportare le foto in JPEG (circa 1800 px sul lato lungo, qualità ~80) e metterle in `media/` con nome `gallery_NN.jpg`
+2. In `index.html`, nella sezione `gallery-grid`, copiare un blocco `<button class="gallery-item reveal" …>` aggiornando `data-index`, `src`, `alt`, `width` e `height`
+3. Caricare su GitHub `index.html` e le nuove foto dentro `media/`
 
-I 3 riquadri video nella sezione "Media" puntano a `media/video1.mp4`, `video2.mp4`, `video3.mp4`, ma questi file non sono mai stati caricati su GitHub (danno errore 404 sul sito pubblicato).
+Nessuna modifica a `script.js`: il lightbox legge in automatico tutte le foto della griglia.
 
-1. Caricare i 3 file video reali nella cartella `media/` del repo, con esattamente questi nomi: `video1.mp4`, `video2.mp4`, `video3.mp4`
-2. Sostituire i titoli placeholder `[Titolo evento 1]`, `[Titolo evento 2]`, `[Titolo evento 3]` in `index.html` con i titoli veri
+## Da fare
 
-Finché non è fatto, i contatti restano comunque raggiungibili via email diretta, WhatsApp e ora anche via form (Formspree attivo).
+- Video: rimossi per ora dal sito. Quando saranno pronti si reinserisce una sezione video (file in `media/`).
 
 ## Come pubblicarlo / aggiornarlo
 
@@ -67,3 +69,4 @@ Il sito è già online: https://gabrpp-afk.github.io/stormtroopers-sito/ — il 
 ## Log verifiche
 
 - **16/09/2026** — verificato allineamento tra repo GitHub (branch `main`) e sito pubblicato su GitHub Pages: `index.html`, `style.css`, `script.js` coincidono, form Formspree confermato attivo e funzionante con ID `xwlkpkko`.
+- **16/10/2026** — allineati locale e GitHub (`index.html`, `style.css`, `script.js`, cartella `media/`). Rimossa la sezione video, aggiunta la galleria foto con lightbox (18 foto).
