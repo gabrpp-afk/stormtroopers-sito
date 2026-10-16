@@ -49,6 +49,46 @@ if (heroSlides.length) {
   startHeroAutoplay();
 }
 
+// Galleria foto con lightbox
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCount = document.getElementById('lbCount');
+let lbIndex = 0;
+
+function showLightbox(index) {
+  lbIndex = (index + galleryItems.length) % galleryItems.length;
+  const img = galleryItems[lbIndex].querySelector('img');
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lbCount.textContent = (lbIndex + 1) + ' / ' + galleryItems.length;
+}
+function openLightbox(index) {
+  showLightbox(index);
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (galleryItems.length) {
+  galleryItems.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', () => showLightbox(lbIndex - 1));
+  document.getElementById('lbNext').addEventListener('click', () => showLightbox(lbIndex + 1));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showLightbox(lbIndex - 1);
+    if (e.key === 'ArrowRight') showLightbox(lbIndex + 1);
+  });
+}
+
 // Animazioni allo scroll: gli elementi con classe "reveal" appaiono
 // con una piccola dissolvenza + slide quando entrano nel viewport.
 const revealObserver = new IntersectionObserver((entries) => {
