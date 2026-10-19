@@ -2,7 +2,7 @@
 
 Sito statico (HTML/CSS/JS, nessun backend necessario), già personalizzato con i dati dell'associazione.
 
-**Sito pubblicato:** https://gabrpp-afk.github.io/stormtroopers-sito/
+**Sito pubblicato:** https://stormairsoft.it (dominio personalizzato; il vecchio indirizzo https://gabrpp-afk.github.io/stormtroopers-sito/ reindirizza qui)
 **Repo GitHub:** gabrpp-afk/stormtroopers-sito (branch `main`)
 
 ## File
@@ -41,18 +41,19 @@ Nessuna modifica a `script.js`: il lightbox legge in automatico tutte le foto de
 
 ## Come pubblicarlo / aggiornarlo
 
-Il sito è già online su GitHub Pages: https://gabrpp-afk.github.io/stormtroopers-sito/
+Il sito è online su GitHub Pages all'indirizzo https://stormairsoft.it
 
 Per aggiornarlo: caricare i file nuovi/modificati su `github.com/gabrpp-afk/stormtroopers-sito` tramite **Add file → Upload files** (sovrascrivendo i file esistenti con lo stesso nome). Se si aggiungono file media, vanno trascinati dentro la cartella `media/` per mantenere i percorsi corretti.
 
 Nota: i nomi file sono case-sensitive su GitHub Pages — devono corrispondere esattamente a quelli referenziati nel codice.
 
-## Dominio personalizzato (opzionale, a pagamento)
+## Dominio personalizzato
 
-Per un indirizzo tipo `www.asdstormtroopers.it`:
+Dominio `stormairsoft.it`, registrato su IONOS (rinnovo annuale il 17/10/2027).
 
-- Registrare il dominio (Register.it, IONOS, Namecheap — indicativamente 10-15€/anno per un `.it`)
-- GitHub Pages permette di collegare un dominio personalizzato gratuitamente dalle impostazioni del repo (Settings > Pages)
+- **DNS (IONOS):** 4 record `A` su `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; `CNAME` `www` → `gabrpp-afk.github.io`. I record della posta IONOS (MX, SPF, DMARC, DKIM, autodiscover) vanno lasciati come sono.
+- **GitHub:** Settings → Pages → Custom domain = `stormairsoft.it`. Il file `CNAME` nella root del repo è creato da GitHub: non cancellarlo.
+- **HTTPS:** attivo tramite "Enforce HTTPS" di GitHub Pages.
 
 ## Costi complessivi
 
@@ -60,13 +61,14 @@ Per un indirizzo tipo `www.asdstormtroopers.it`:
 |---|---|
 | Sito e hosting (GitHub Pages) | Gratuito |
 | Form contatti (Formspree, piano free) | Gratuito fino a 50 messaggi/mese |
-| Dominio personalizzato `.it` | Opzionale, ~10-15€/anno |
+| Dominio `stormairsoft.it` (IONOS) | Costo annuale, rinnovo 17/10/2027 |
 
 ## Provare il sito
 
-Il sito è già online: https://gabrpp-afk.github.io/stormtroopers-sito/ — il form di contatto (Formspree) funziona direttamente da lì.
+Il sito è già online: https://stormairsoft.it — il form di contatto (Formspree) funziona direttamente da lì.
 
 ## Log verifiche
 
 - **16/09/2026** — verificato allineamento tra repo GitHub (branch `main`) e sito pubblicato su GitHub Pages: `index.html`, `style.css`, `script.js` coincidono, form Formspree confermato attivo e funzionante con ID `xwlkpkko`.
 - **16/10/2026** — allineati locale e GitHub (`index.html`, `style.css`, `script.js`, cartella `media/`). Rimossa la sezione video, aggiunta la galleria foto con lightbox (18 foto).
+- **19/10/2026** — dominio `stormairsoft.it` collegato a GitHub Pages e funzionante.
